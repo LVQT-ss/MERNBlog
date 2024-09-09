@@ -1,0 +1,11 @@
+import express from 'express';
+
+const app = express();
+
+// Middleware to parse JSON request bodies
+
+app.use(express.json());
+
+app.listen(3000,() =>{
+    console.log('Server listening on port 3000');
+})
