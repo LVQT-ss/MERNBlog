@@ -5,11 +5,13 @@ import SignIn from './pages/Signin';
 import SignUp from './pages/SignUp.jsx';
 import Projects from './pages/Projects';
 import Dashboard from './pages/Dashboard.jsx';
+import Header from './components/Header.jsx';
 
 function App() {
 
   return (
     <BrowserRouter>
+      <Header/>
         <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
