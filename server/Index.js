@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-
+import { test } from './controllers/user.controller';
 dotenv.config();
 
 mongoose
@@ -23,3 +23,4 @@ app.use(express.json());
 app.listen(3000,() =>{
     console.log('Server listening on port 3000');
 })
+app.get('/test',test)
