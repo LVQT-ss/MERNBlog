@@ -16,9 +16,8 @@ const SignUp = () => {
 
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });// trim to remove spaces in form
   };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -98,16 +97,16 @@ const SignUp = () => {
           <Button
             gradientDuoTone='purpleToPink'
             type='submit'
-            // disabled={loading}
-          > Sign up
-            {/* {loading ? (
+            disabled={loading} // prevent spam submit
+          > 
+            {loading ? (
               <>
                 <Spinner size='sm' />
                 <span className='pl-3'>Loading...</span>
               </>
             ) : (
               'Sign Up'
-            )} */}
+            )}
           </Button>
         </form>
         <div className='flex gap-2 text-sm mt-5'>
@@ -116,11 +115,11 @@ const SignUp = () => {
             Sign In
           </Link>
         </div>
-        {/* {errorMessage && (
+        {errorMessage && (
           <Alert className='mt-5' color='failure'>
             {errorMessage}
           </Alert>
-        )} */}
+        )}
       </div>
     </div>
   </div>
