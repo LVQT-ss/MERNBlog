@@ -1,10 +1,11 @@
 import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
 import React from "react";
-import { Link,useLocation } from "react-router-dom";
+import { Link,useLocation,useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
 const Header = () => {
     const path = useLocation().pathname;
+    const navigate = useNavigate();
   return (
     <Navbar className="border-b-2">
       <Link
@@ -32,8 +33,8 @@ const Header = () => {
         <Button className="w-12 h-10 hidden sm:inline " color="gray" pill>
           <FaMoon />
         </Button>
-        <Link>
-          <Button to="/sign-in" gradientDuoTone="purpleToBlue" outline pill >
+        <Link to="/sign-in">
+          <Button  gradientDuoTone="purpleToBlue" outline pill >
             Sign In
           </Button>
         </Link>
