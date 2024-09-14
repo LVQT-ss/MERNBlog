@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.route.js';
 import userRoutes from './routes/user.route.js';
+import cookieParser from 'cookie-parser';
 dotenv.config();
 
 // Connect to MongoDB database
@@ -18,14 +19,14 @@ const app = express();
 // Middleware to parse JSON request bodies
 
 app.use(express.json());
-
+app.use(cookieParser());
 app.listen(3000,() =>{
     console.log('Server listening on port 3000');
 })
 
 
 
-app.use('/api/auth',userRoutes)
+app.use('/api/user',userRoutes)
 
 app.use('/api/auth',authRoutes)
 
