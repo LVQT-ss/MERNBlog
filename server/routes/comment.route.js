@@ -4,7 +4,7 @@ import {
   createComment,
 //   deleteComment,
 //   editComment,
-//   getPostComments,
+  getPostComments,
 //   getcomments,
 //   likeComment,
 } from '../controllers/comment.controller.js';
@@ -12,5 +12,5 @@ import {
 const router = express.Router();
 
 router.post('/create', verifyToken, createComment);
-
+router.get('/getPostComments/:postId', getPostComments);
 export default router;

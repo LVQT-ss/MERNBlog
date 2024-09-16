@@ -1,7 +1,8 @@
 import { Textarea ,Alert,Button} from 'flowbite-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import Comment from './Comment'
 
 export default function CommentSection({postId}) {
     const {currentUser} = useSelector(state => state.user)
@@ -38,6 +39,25 @@ export default function CommentSection({postId}) {
           setCommentError(error.message);
         }
       };
+
+      
+  useEffect(() => {
+    const getComments = async () => {
+      try {
+        const res = await fetch(`/api/comment/getPostComments/${postId}`);
+        if (res.ok) {
+          const data = await res.json();
+          setComments(data);
+        }
+        console.log(res)
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    getComments();
+  }, [postId]);
+
+ 
   return (
     <div className='max-w-2xl mx-auto w-full p-3'>
       {currentUser ? (
@@ -84,6 +104,24 @@ export default function CommentSection({postId}) {
             </Alert>
           )}
         </form>
+      )}
+       {comments.length === 0 ? (
+        <p className='text-sm my-5'>No comments yet!</p>
+      ) : (
+        <>
+          <div className='text-sm my-5 flex items-center gap-1'>
+            <p>Comments</p>
+            <div className='border border-gray-400 py-1 px-2 rounded-sm'>
+              <p>{comments.length}</p>
+            </div>
+          </div>
+          {comments.map(comment => (
+            <Comment 
+              key={comment._id}
+              comment={comment}
+            />
+          ))}
+        </>
       )}
 
     </div>
