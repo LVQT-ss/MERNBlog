@@ -9,7 +9,7 @@
     "start": "node index.js",
     "frontend-build": "cd ../client && npm install && npm run build",
     "backend-build": "npm install",
-    "build": "npm run frontend-build && npm run backend-build"
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
