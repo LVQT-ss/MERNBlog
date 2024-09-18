@@ -14,7 +14,7 @@ import UpdaetPost from "./pages/UpdatePost.jsx";
 import PostPage from "./pages/PostPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Search from "./pages/Search.jsx";
-import SignIn from "./pages/Signin.jsx";
+import SignIn from './pages/SignIn.jsx';
 
 function App() {
   return (
