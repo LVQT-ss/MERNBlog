@@ -78,6 +78,7 @@ export default function SignIn() {
                 placeholder='**********'
                 id='password'
                 onChange={handleChange}
+                autoComplete="on"
               />
             </div>
             <Button
