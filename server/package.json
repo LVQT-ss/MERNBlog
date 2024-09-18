@@ -9,8 +9,9 @@
     "start": "node index.js",
 "frontend-build": "npm run build --prefix ../client",
 "backend-build": "npm install",
-"build": "npm run backend-build && npm run frontend-build"
+"build": "npm run backend-build && npm run frontend-build",
 
+"render-postbuild": "npm install --prefix frontend --production=false && cd /opt/render/project/src/client && npm run build"
   },
   "keywords": [],
   "author": "",
