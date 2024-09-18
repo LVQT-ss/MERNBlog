@@ -7,9 +7,7 @@
   "scripts": {
     "dev":"nodemon index.js ",
     "start": "node index.js",
-"frontend-build": "npm run build --prefix ../client",
-"backend-build": "npm install",
-"build": "npm run backend-build && npm run frontend-build"
+"build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
