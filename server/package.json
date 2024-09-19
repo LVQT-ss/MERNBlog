@@ -5,12 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon api/index.js",
-    "start": "node api/index.js",
+    "dev":"nodemon index.js ",
+    "start": "node index.js",
     "frontend-build": "cd ../client && npm install && npm run build",
     "backend-build": "npm install",
     "build": "npm run frontend-build && npm run backend-build"
-
   },
   "keywords": [],
   "author": "",
